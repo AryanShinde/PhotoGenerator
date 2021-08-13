@@ -1,0 +1,36 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Dancing Script', cursive;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+header form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-tag{
+    text-decoration: none;
+    color: rgb(219, 97, 97);
+}
+.input-box{
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 2px solid rgb(206, 86, 86);
+    margin: 2rem 0rem;
+}
+h1{
+    padding:2rem 2rem;
+}
+.submit-btn{
+    background:rgb(206, 86, 86);
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: none;
+    color: white;
+}
