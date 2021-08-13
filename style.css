@@ -33,4 +33,5 @@ h1{
     font-size: 1rem;
     border: none;
     color: white;
+    cursor: pointer;
 }
