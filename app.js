@@ -6,14 +6,20 @@ const galleryMain = document.querySelector(".images");
 const submitBtn = document.querySelector(".submit-btn");
 const Form = document.querySelector("form");
 const inputBox = document.querySelector("input");
+const moreBtn = document.querySelector(".more-btn");
 let inputvalue;
+let currentQuery="";
 
 
 Form.addEventListener("submit", (e) => {
     e.preventDefault();
     inputvalue = inputBox.value;
+    currentQuery = inputvalue;
     SearchPhotos(inputvalue);
-})
+});
+
+
+moreBtn.addEventListener("click", updatePhotos);
 
 async function fetchApi(api) {
     const photo = await fetch(api, {
@@ -30,7 +36,7 @@ async function fetchApi(api) {
 function generatePhotos(response) {
     response.photos.forEach((photo) => {
         const src = photo.src.large;
-        const photDiv=document.createElement("div");
+        const photDiv = document.createElement("div");
         photDiv.innerHTML = `<div class="per-photo" ><div class="gallery-info"> <p>${photo.photographer}</p><a href=${photo.src.original} Download>Download</a></div>
         <img src=${src}></img></div>`;
         galleryMain.appendChild(photDiv);
@@ -53,7 +59,28 @@ async function SearchPhotos(query) {
 function clear() {
     galleryMain.innerHTML = "";
     inputBox.value = "";
+
 }
+
+var count=1;
+var curatedCount=2;
+async function updatePhotos() {
+    console.log(currentQuery)
+    if (count <= 15 && currentQuery!="" ) {
+        newApi = `https://api.pexels.com/v1/search?query=${currentQuery}+query&per_page=15&page=${count}`
+        count++;
+        console.log(count);
+    }
+    else if(curatedCount<=15){
+        newApi=`https://api.pexels.com/v1/curated?per_page=15&page=${curatedCount}`;
+        curatedCount++;
+    }
+    const response=await fetchApi(newApi);
+    generatePhotos(response);
+
+}
+
+
 
 // function getImages2(){
 //     console.log("f")
