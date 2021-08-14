@@ -13,6 +13,8 @@ header form{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 3rem;
+
 }
 .hero-tag{
     text-decoration: none;
@@ -34,4 +36,52 @@ h1{
     border: none;
     color: white;
     cursor: pointer;
+}
+.gallery-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0.2rem 1rem;
+    box-sizing: border-box;
+}
+.gallery-info a{
+    color:rgb(206, 86, 86) ;
+}
+.main-gallery{
+    max-width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: auto;
+}
+.images{
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1rf)); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.per-photo img{
+    width: 250px;
+    height: 400px;
+    max-width: 350px !important;
+    max-height: 400px !important;
+    object-fit: cover;
+    margin: 1rem;
+}
+.more-btn{
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: rgb(206, 86, 86);
+    padding: 0.5rem;
+    color: white;
+    margin: 2rem;
+}
+.load-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
